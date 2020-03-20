@@ -31,7 +31,7 @@ function TailStream(filepath, opts) {
         this.waitingForReappear = false;
         fs.open(this.path, 'r', (err, fd) => {
             if(err) {
-                if(!this.opts.waitForCreate) { throw e; }
+                if(!this.opts.waitForCreate) { throw err; }
                 this.fd = null;
                 this.dataAvailable = false;
                 this.waitForFileToReappear();
